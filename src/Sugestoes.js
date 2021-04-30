@@ -1,70 +1,42 @@
+import Usuario from "./Usuario";
+import Links from "./Links";
+import Copyright from "./Copyright";
+
+const sugestoes = [
+  {img:"img/bad.vibes.memes.svg", user:"bad.vibes.memes", mutual:"Segue você"},
+  {img:"img/chibirdart.svg", user:"chibirdart", mutual:"Segue você"},
+  {img:"img/razoesparaacreditar.svg", user:"razoesparaacreditar", mutual:"Novo no Instagram"},
+  {img:"img/adorable_animals.svg", user:"adorable_animals", mutual:"Segue você"},
+  {img:"img/smallcutecats.svg", user:"smallcutecats", mutual:"Segue você"},
+]
+
 export default function Sugestoes(){
     return(
+      <div class="sidebar">
+        <Usuario username="catanacomics" name="Catana" img="img/catanacomics.svg" alt="catanacomics"/>
         <div class="sugestoes">
         <div class="titulo">
           Sugestões para você
           <div>Ver tudo</div>
         </div>
-
+        {sugestoes.map((elemento)=>
         <div class="sugestao">
           <div class="usuario">
-            <img src="img/bad.vibes.memes.svg" />
+            <img src={elemento.img} alt={elemento.user}/>
             <div class="texto">
-              <div class="nome">bad.vibes.memes</div>
-              <div class="razao">Segue você</div>
+              <div class="nome">
+                {elemento.user}
+              </div>
+              <div class="razao">
+                {elemento.mutual}
+              </div>
             </div>
           </div>
-
           <div class="seguir">Seguir</div>
         </div>
-
-        <div class="sugestao">
-          <div class="usuario">
-            <img src="img/chibirdart.svg" />
-            <div class="texto">
-              <div class="nome">chibirdart</div>
-              <div class="razao">Segue você</div>
-            </div>
-          </div>
-
-          <div class="seguir">Seguir</div>
+        )}
         </div>
-
-        <div class="sugestao">
-          <div class="usuario">
-            <img src="img/razoesparaacreditar.svg" />
-            <div class="texto">
-              <div class="nome">razoesparaacreditar</div>
-              <div class="razao">Novo no Instagram</div>
-            </div>
-          </div>
-
-          <div class="seguir">Seguir</div>
+        <Links />
+        <Copyright />
         </div>
-
-        <div class="sugestao">
-          <div class="usuario">
-            <img src="img/adorable_animals.svg" />
-            <div class="texto">
-              <div class="nome">adorable_animals</div>
-              <div class="razao">Segue você</div>
-            </div>
-          </div>
-
-          <div class="seguir">Seguir</div>
-        </div>
-
-        <div class="sugestao">
-          <div class="usuario">
-            <img src="img/smallcutecats.svg" />
-            <div class="texto">
-              <div class="nome">smallcutecats</div>
-              <div class="razao">Segue você</div>
-            </div>
-          </div>
-
-          <div class="seguir">Seguir</div>
-        </div>
-      </div>
-    )
-}
+    )}

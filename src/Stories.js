@@ -1,81 +1,33 @@
-export default function Stories(){
+
+  const stories = [
+    {img:"img/9gag.svg", nome:'9gag' },
+    {img:"img/meowed.svg",nome:'mewoed'},
+    {img:"img/barked.svg",nome:'barked'},
+    {img:"img/nathanwpylestrangeplanet.svg",nome:'nathanwpylestrangeplanet'},
+    {img:"img/wawawicomics.svg",nome:'wawawicomics'},
+    {img:"img/respondeai.svg",nome:'respondeai'},
+    {img:"img/filomoderna.svg",nome:'filomoderna'},
+    {img:"img/memeriagourmet.svg",nome:'memeriagourmet'} 
+  ]
+
+  export default function Stories(){
+
     return(
         <div class="stories">
-        <div class="story">
-          <div class="imagem">
-            <img src="img/9gag.svg" />
+          {stories.map((elemento)=>
+          <div class="story">
+            <div class="imagem">
+              <img src={elemento.img} alt={elemento.nome}/>
+            </div>
+            <div class="usuario">
+              {elemento.nome}
+            </div>
           </div>
-          <div class="usuario">
-            9gag
-          </div>
-        </div>
+          )}
 
-        <div class="story">
-          <div class="imagem">
-            <img src="img/meowed.svg" />
+          <div class="setinha">
+            <ion-icon name="chevron-forward-circle"></ion-icon>
           </div>
-          <div class="usuario">
-            meowed
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="img/barked.svg" />
-          </div>
-          <div class="usuario">
-            barked
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="img/nathanwpylestrangeplanet.svg" />
-          </div>
-          <div class="usuario">
-            nathanwpylestrangeplanet
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="img/wawawicomics.svg" />
-          </div>
-          <div class="usuario">
-            wawawicomics
-          </div>
-        </div>
-        
-        <div class="story">
-          <div class="imagem">
-            <img src="img/respondeai.svg" />
-          </div>
-          <div class="usuario">
-            respondeai
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="img/filomoderna.svg" />
-          </div>
-          <div class="usuario">
-            filomoderna
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="img/memeriagourmet.svg" />
-          </div>
-          <div class="usuario">
-            memeriagourmet
-          </div>
-        </div>
-
-        <div class="setinha">
-          <ion-icon name="chevron-forward-circle"></ion-icon>
-        </div>
       </div>
     )
 }
